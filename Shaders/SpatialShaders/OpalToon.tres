@@ -196,9 +196,9 @@ render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_s
 
 
 // Varyings
-varying vec3 world_pos;
-varying vec3 nodeCamPos;
-varying vec3 vert;
+varying vec3 var_world_pos;
+varying vec3 var_nodeCamPos;
+varying vec3 var_vert;
 
 uniform bool Use_Triplanar = false;
 uniform sampler2D AbledoTriplanar : filter_nearest;
@@ -242,7 +242,7 @@ void vertex() {
 
 
 // VaryingSetter:6
-	world_pos = n_out4p0;
+	var_world_pos = n_out4p0;
 
 
 }
@@ -307,7 +307,7 @@ void fragment() {
 
 
 // VaryingSetter:26
-	vert = n_out27p0;
+	var_vert = n_out27p0;
 
 
 // Input:28
@@ -315,7 +315,7 @@ void fragment() {
 
 
 // VaryingSetter:29
-	nodeCamPos = n_out28p0;
+	var_nodeCamPos = n_out28p0;
 
 
 }

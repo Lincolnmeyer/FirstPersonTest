@@ -53,20 +53,20 @@ void fragment()
 {
 	vec2 uv = SCREEN_UV;
 	uv *=  1.0 - uv.yx;
-	
+
 	vec4 color = texture(screen_texture, SCREEN_UV);
 	vec4 lensFlare = texture(blur_texture, 1.0 - SCREEN_UV, 4.0);
-	
+
 	lensFlare.rgb = pow(lensFlare.rgb, vec3(4.0)) / 4.0;
-	
+
 	float vig = uv.x * uv.y * 15.0;
 	vig = pow(vig, 4.0);
-	
+
 	lensFlare *= vig;
 	color.rgb += lensFlare.rgb;
 
 	color.rgb = clamp(ACESFitted(color.rgb * 1.4) * 1.4, 0.0, 1.0);
 	color.rgb = apply_color_correction(color.rgb);
-	
+
 	COLOR = color;
 }

@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://bybyp343kuw4f"
+path="res://.godot/imported/AGX_Compute.glsl-7d34233738f26894bb315e25584ca54e.res"
+
+[deps]
+
+source_file="res://Shaders/Tonemapper/AGX_Compute.glsl"
+dest_files=["res://.godot/imported/AGX_Compute.glsl-7d34233738f26894bb315e25584ca54e.res"]
+
+[params]
+

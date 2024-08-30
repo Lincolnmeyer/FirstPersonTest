@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2317vj04gpjj"]
+[gd_scene load_steps=24 format=3 uid="uid://b2317vj04gpjj"]
 
 [ext_resource type="Script" path="res://Scripts/Utils/hotkeys.gd" id="1_8lpkj"]
 [ext_resource type="Material" uid="uid://dp4x7b3pwworv" path="res://Shaders/Tonemapper/AGX_Tonemap.tres" id="3_lyqhu"]
@@ -7,6 +7,7 @@
 [ext_resource type="Environment" uid="uid://5og8o40ne2l2" path="res://Scenes/MainWorldEnv.tres" id="6_ojpui"]
 [ext_resource type="AudioStream" uid="uid://d0twbbjgid5bv" path="res://Sounds/wind_loop.wav" id="7_j0q8y"]
 [ext_resource type="Material" uid="uid://bo5mfobfb6lgw" path="res://Materials/concrete_toon.tres" id="8_pm56x"]
+[ext_resource type="CompositorEffect" uid="uid://jsen28df4eqy" path="res://Shaders/Tonemapper/test_comp.tres" id="9_jm3yb"]
 [ext_resource type="Material" uid="uid://bj14whv7vnkkj" path="res://Materials/Terrain.tres" id="9_v2cdd"]
 [ext_resource type="PackedScene" uid="uid://b1c77yfcgtimc" path="res://Prefabs/Props/radio.tscn" id="11_25l8y"]
 [ext_resource type="PackedScene" uid="uid://dt46jlryv15y2" path="res://Prefabs/Cars/jeep.tscn" id="17_57kyk"]
@@ -25,6 +26,9 @@ shader_parameter/blur = 3.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_54a3o"]
 font_size = 40
+
+[sub_resource type="Compositor" id="Compositor_igu2b"]
+compositor_effects = Array[CompositorEffect]([ExtResource("9_jm3yb")])
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_deiww"]
 size = Vector3(15, 12, 40)
@@ -117,6 +121,7 @@ TerrainMaterial = ExtResource("9_v2cdd")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource("6_ojpui")
+compositor = SubResource("Compositor_igu2b")
 
 [node name="WindAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_j0q8y")
